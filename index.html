@@ -35,6 +35,19 @@
       50% { transform: scale(1.5); }
       100% { transform: scale(1); }
     }
+    button {
+      background-color: #ff4d6d;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background-color: #e03e5c;
+    }
   </style>
 </head>
 <body>
@@ -42,6 +55,16 @@
   <p>Even miles apart, my love for you only grows stronger each day.</p>
   <p>Here's to our beautiful journey together, my forever Valentine!</p>
 
-  <audio id="bg-music" src="Tu_Mere_Paas_Cut_25sec.mp3" autoplay onended="window.close();"></audio>
+  <button onclick="playMusic()">Open Your Gift</button>
+
+  <audio id="bg-music" src="Tu_Mere_Paas_Cut_25sec.mp3" onended="window.close();"></audio>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById('bg-music');
+      audio.play();
+      document.querySelector('button').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
